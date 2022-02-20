@@ -80,3 +80,9 @@ a {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
+
+.nav-link:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+}
