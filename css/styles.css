@@ -42,13 +42,21 @@ a {
     align-self: center;
 }
 
+.cart:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+}
+
 .login {
     grid-column: 5/6;
     justify-self: center;
     align-self: center;
 }
 
-
+.login:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+}
 
 .logo {
     height: 8rem;
@@ -86,3 +94,13 @@ a {
     transform: scale(1.2);
     transition: all 0.4s;
 }
+
+
+
+
+
+
+
+
+
+
