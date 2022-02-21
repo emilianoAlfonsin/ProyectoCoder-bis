@@ -70,6 +70,13 @@ a {
 
 /*Fin header*/
 
+/*Footer*/
+footer {
+    background-color: #55dbdc;
+    margin-top: 5rem;
+    padding: 1rem;
+}
+
 /*Navbar*/
 
 .navbar-nav {
