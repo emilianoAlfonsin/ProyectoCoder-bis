@@ -68,6 +68,10 @@ a {
     align-self: center;
 }
 
+/*Fin header*/
+
+/*Navbar*/
+
 .navbar-nav {
     width: 100%; 
     display: flex;
@@ -95,7 +99,19 @@ a {
     transition: all 0.4s;
 }
 
+/*Fin navbar*/
 
+.destacados {
+    margin-top: 5rem;
+}
+
+.promocionados-item img{
+    height: 20rem;
+}
+.promocionados-item:hover {
+    transform: scale (1.1);
+    box-shadow: 1px 1px 3px #55dbdc;
+}
 
 
 
