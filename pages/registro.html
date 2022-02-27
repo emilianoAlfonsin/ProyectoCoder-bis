@@ -92,19 +92,59 @@
 
     <main>
 
+        <h1>Registrate</h1>
         
-
-
-
-
-
-
-
-
-
-
-
-
+        <section class="register-container">
+            <form class="register-form">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6 col-sm-12">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" id="name">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label for="last-name" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name" id="last-name">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="adress" class="form-label">Dirección</label>
+                    <input type="adress" class="form-control" id="adress" aria-describedby="adress">                    
+                </div>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6 col-sm-12">
+                        <label for="city" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control" placeholder="Ciudad" aria-label="Ciudad" id="city">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label for="postal" class="form-label">Codigo Postal</label>
+                        <input type="text" class="form-control" placeholder="Codigo postal" aria-label="Codigo postal" id="postal">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp">                    
+                </div>
+                <div class="row g-3 mb-3">
+                    <div class="col">
+                        <label for="inputPassword1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword1">
+                        <div id="inputPassword1" class="form-text">
+                            La contraseña debe tener al menos 8 caracteres, una mayúscula y un número, sin caracteres especiales.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="inputPassword2" class="form-label">Repita su contraseña</label>
+                        <input type="password" id="inputPassword2" class="form-control" aria-describedby="passwordHelpBlock">
+                    </div>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="permanecer-regitrado">
+                    <label class="form-check-label" for="exampleCheck1">Permanecer registrado</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarme</button>
+            </form>
+        </section>
 
 
 
