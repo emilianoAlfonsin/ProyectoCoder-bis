@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/static/Montserrat-Medium.ttf');
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+img {
+    max-width: 100%;
+}
+
+h1, h2{
+    text-align: center;
+    padding: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Header*/
+
+.main-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10rem 1fr;
+}
+
+.logo-header {
+    grid-column: 3/4;
+    justify-self: center;
+    align-self: center;
+    
+}
+
+.cart {
+    grid-column: 4/5;
+    justify-self: end;
+    align-self: center;
+}
+
+.cart:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+}
+
+.login {
+    grid-column: 5/6;
+    justify-self: center;
+    align-self: center;
+}
+
+.login:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+}
+
+.logo {
+    height: 8rem;
+}
+
+.busqueda {
+    grid-column: 1/2;
+    justify-self: center;
+    align-self: center;
+}
+
+/*Fin header*/
+
+/*Footer*/
+footer {
+    background-color: #55dbdc;
+    margin-top: 5rem;
+    padding: 1rem;
+}
+
+/*Navbar*/
+
+.navbar-nav {
+    width: 100%; 
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+    
+}
+  
+.navbar-nav > li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.bgnav {
+    background: linear-gradient(#55dbdc, #ffff);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.nav-link:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+}
+
+/*Fin navbar*/
+
+.destacados {
+    margin-top: 5rem;
+}
+
+.destacados h2 {
+    text-size-adjust: auto;
+}
+.promocionados {
+    display: flex;
+    flex-direction: row;
+}
+
+.promocionados-item img{
+    width: 20rem;
+}
+
+.promocionados-item:hover {
+    transform: scale (1.1);
+    box-shadow: 1px 1px 3px #55dbdc;
+}
+
+
+
+/*Seccion productos*/
+
+.catalogo-item:hover {
+    box-shadow: 2px 2px 6px gray;
+}
+
+/*Seciión regristro*/
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    margin: 5rem 2rem 10rem 2rem;
+}
+
+.register form {
+    width: 75%;
+}
+
+
+
+

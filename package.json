@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-coder-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilianoAlfonsin/ProyectoCoder-bis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilianoAlfonsin/ProyectoCoder-bis/issues"
+  },
+  "homepage": "https://github.com/emilianoAlfonsin/ProyectoCoder-bis#readme"
+}
