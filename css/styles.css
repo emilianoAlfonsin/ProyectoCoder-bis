@@ -13,10 +13,9 @@ body{
 }
 img {
     max-width: 100%;
-    /*object-fit: contain;*/
 }
 
-h1 {
+h1, h2{
     text-align: center;
     padding: 2rem;
 }
@@ -31,7 +30,6 @@ a {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 10rem 1fr;
-    background-color: white; 
 }
 
 .logo-header {
@@ -98,7 +96,8 @@ footer {
 }
 
 .bgnav {
-    background-color: #55dbdc;
+    background-color: ;
+    background: linear-gradient(#55dbdc, #ffff);
 }
 
 .dropdown:hover .dropdown-menu {
@@ -117,13 +116,24 @@ footer {
     margin-top: 5rem;
 }
 
-.promocionados-item img{
-    height: 20rem;
+.destacados h2 {
+    text-size-adjust: auto;
 }
+.promocionados {
+    display: flex;
+    flex-direction: row;
+}
+
+.promocionados-item img{
+    width: 20rem;
+}
+
 .promocionados-item:hover {
     transform: scale (1.1);
     box-shadow: 1px 1px 3px #55dbdc;
 }
+
+
 
 /*Seccion productos*/
 
