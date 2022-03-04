@@ -1,3 +1,27 @@
-
+.catalog .catalog-sheet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  grid-auto-rows: 35rem;
+}
+.catalog .catalog-sheet .catalog-item:hover {
+  box-shadow: 2px 2px 6px gray;
+}
+.catalog .catalog-sheet .catalog-item .catalog-card div h5 {
+  text-align: center;
+}
+.catalog .catalog-sheet .catalog-item .catalog-card div p {
+  text-align: justify;
+}
+@media screen and (max-width: 768px) {
+  .catalog .catalog-sheet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .catalog .catalog-sheet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

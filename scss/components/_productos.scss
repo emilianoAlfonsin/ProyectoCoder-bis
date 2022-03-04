@@ -1,0 +1,46 @@
+@import '../base/lists';
+
+
+.catalog {
+    .catalog-sheet {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        grid-auto-rows: 35rem;
+
+        .catalog-item {
+            &:hover {
+                box-shadow: 2px 2px 6px gray;
+            }
+            .catalog-card {
+                
+                img{
+            
+                }
+
+                div{
+                    
+                    h5 {
+                        text-align: center;
+                    }
+                    p {
+                        text-align: justify;
+
+                    }
+
+                    a {
+                        
+                    }
+                }
+               
+            }
+           
+        }
+        @media screen and (max-width: 768px){
+        grid-template-columns: repeat(3, 1fr);
+        }
+        @media screen and (max-width: 480px){
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
