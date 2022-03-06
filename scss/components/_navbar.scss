@@ -1,0 +1,50 @@
+@import '../base/lists';
+
+
+
+.nav-bar {
+    background: linear-gradient(#55dbdc, #ffff);
+    div {
+
+        div {
+            ul{
+                width: 100%;
+                display: flex;
+                flex-wrap: no-wrap;
+                justify-content: space-around;
+
+                li {
+                    &:hover {
+                        transform: scale(1.2);
+                        transition: all 0.4s;
+                    }
+                }
+
+                .dropdown {
+                    .dropdown-menu {
+                        display: none;
+                    }
+                    &:hover {
+                        .dropdown-menu {
+                            display: block;
+
+                    }
+                    
+                }
+                ul {
+                        
+                    li{
+                        &:hover {
+                            transform: scale(1.2);
+                            transition: all 0.4s;
+                            background-color: nth($colores, 1 );
+                        }
+                        
+                        }
+                    }
+                }
+            
+            }
+        }
+    }
+}

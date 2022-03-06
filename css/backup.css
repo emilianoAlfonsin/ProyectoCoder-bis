@@ -90,10 +90,10 @@ footer {
     
 }
   
-.navbar-nav > li {
+/* .navbar-nav  li {
     flex-grow: 1;
     text-align: center;
-}
+} */
 
 .bgnav {
     background: linear-gradient(#55dbdc, #ffff);
