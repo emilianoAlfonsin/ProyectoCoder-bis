@@ -16,11 +16,23 @@ header div {
 }
 header div .cart a img:hover {
   transform: scale(1.1);
-  transition: all 0.4s;
+  transition: 0.4s;
 }
 header div .login a img:hover {
   transform: scale(1.1);
-  transition: all 0.4s;
+  transition: 0.4s;
+}
+
+footer {
+  background: linear-gradient(#55dbdc, #ffff);
+}
+footer div {
+  display: flex;
+  align-items: center;
+}
+footer div div a img:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
 }
 
 .nav-bar {
@@ -34,7 +46,7 @@ header div .login a img:hover {
 }
 .nav-bar div div ul li:hover {
   transform: scale(1.2);
-  transition: all 0.4s;
+  transition: 0.4s;
 }
 @media screen and (max-width: 990px) {
   .nav-bar div div ul li:hover {

@@ -1,5 +1,5 @@
 @import '../base/lists';
-
+@import '../base/mixin';
 
 
 .nav-bar {
@@ -15,8 +15,7 @@
 
                 li {
                     &:hover {
-                        transform: scale(1.2);
-                        transition: all 0.4s;
+                        @include aumentar (scale(1.2), 00.4s);
                     }
                     @media screen and (max-width: 990px) {
                         &:hover {

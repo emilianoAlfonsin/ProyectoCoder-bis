@@ -1,4 +1,4 @@
-
+@import '../base/mixin';
 
 header {
     display: flex;
@@ -26,8 +26,7 @@ header {
                 img {
                    
                     &:hover {
-                        transform: scale(1.1);
-                        transition: all 0.4s;
+                        @include aumentar (scale(1.1), 00.4s);
                     }
                 }
             }
@@ -37,8 +36,7 @@ header {
                 img {
                     
                     &:hover {
-                        transform: scale(1.1);
-                        transition: all 0.4s;
+                        @include aumentar (scale(1.1), 00.4s);
                     }
                 }
             }

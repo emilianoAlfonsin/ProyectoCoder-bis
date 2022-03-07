@@ -1,0 +1,4 @@
+@mixin aumentar ($escala, $lapso) {
+    transform: $escala;
+    transition: $lapso;
+}
