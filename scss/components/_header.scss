@@ -1,0 +1,48 @@
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    .busqueda {
+        width: 15rem;
+    }
+    .logo-header {
+        
+        a {
+            img {
+                width: 15rem;
+                height: auto;                
+            }
+        }
+
+    }
+    div {
+        display: flex;
+        width: 15rem;
+        .cart {
+            a {
+                img {
+                   
+                    &:hover {
+                        transform: scale(1.1);
+                        transition: all 0.4s;
+                    }
+                }
+            }
+        }
+        .login {
+            a {
+                img {
+                    
+                    &:hover {
+                        transform: scale(1.1);
+                        transition: all 0.4s;
+                    }
+                }
+            }
+        }
+    }
+    
+}
