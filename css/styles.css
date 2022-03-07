@@ -1,3 +1,28 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header .busqueda {
+  width: 15rem;
+}
+header .logo-header a img {
+  width: 15rem;
+  height: auto;
+}
+header div {
+  display: flex;
+  width: 15rem;
+}
+header div .cart a img:hover {
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+header div .login a img:hover {
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
 .nav-bar {
   background: linear-gradient(#55dbdc, #ffff);
 }
@@ -18,9 +43,8 @@
   display: block;
 }
 .nav-bar div div ul .dropdown ul li:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
   transition: all 0.4s;
-  background-color: #55dbdc;
 }
 
 .catalog .catalog-sheet {
