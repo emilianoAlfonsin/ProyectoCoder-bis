@@ -36,15 +36,10 @@ header div .login a img:hover {
   transform: scale(1.2);
   transition: all 0.4s;
 }
-.nav-bar div div ul .dropdown .dropdown-menu {
-  display: none;
-}
-.nav-bar div div ul .dropdown:hover .dropdown-menu {
-  display: block;
-}
-.nav-bar div div ul .dropdown ul li:hover {
-  transform: scale(1.05);
-  transition: all 0.4s;
+@media screen and (max-width: 990px) {
+  .nav-bar div div ul li:hover {
+    transform: none;
+  }
 }
 
 .catalog .catalog-sheet {
