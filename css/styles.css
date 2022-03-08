@@ -1,3 +1,7 @@
+@charset "UTF-8";
+
+
+/*Sección header*/
 header {
   display: flex;
   align-items: center;
@@ -23,6 +27,7 @@ header div .login a img:hover {
   transition: 0.4s;
 }
 
+/*Footer*/
 footer {
   background: linear-gradient(#55dbdc, #ffff);
 }
@@ -35,6 +40,7 @@ footer div div a img:hover {
   transition: 0.4s;
 }
 
+/*Navbar*/
 .nav-bar {
   background: linear-gradient(#55dbdc, #ffff);
 }
@@ -54,6 +60,22 @@ footer div div a img:hover {
   }
 }
 
+/* Index - Sección desctacados*/
+.destacados {
+  margin-bottom: 2rem;
+}
+.destacados div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.destacados div div img {
+  width: 15rem;
+  height: auto;
+}
+
+/* Productos - Sección catálogo*/
 .catalog .catalog-sheet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
