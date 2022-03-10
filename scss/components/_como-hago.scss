@@ -1,0 +1,63 @@
+
+.how-to-container{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 480px) {
+        width: 95%;
+    }
+    .item-l {
+        align-self: flex-start;
+        @media screen and (max-width: 480px) {
+            align-self: center;
+        }
+        
+        p {
+            margin: 5px;
+            font-weight: bold;
+            font-size: large;      
+            
+        }
+
+    }
+
+    .item-w {
+        align-self: flex-end;
+        @media screen and (max-width: 480px) {
+            align-self: center;
+        }
+
+        p {
+            margin: 5px;
+            font-weight: bold;
+            font-size: large;            
+            
+        }
+        
+    }
+}
+
+.delivery-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    div {
+        margin: 15px 0px 15px 0px;
+        
+        img {
+            width: 30rem;            
+        }        
+    }
+    ul {
+        li{
+            list-style: none;
+            text-align: center;
+        }
+    }
+}
