@@ -9,6 +9,9 @@ header {
     
     .busqueda {
         width: 15rem;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     }
     .logo-header {
         
@@ -23,20 +26,11 @@ header {
     div {
         display: flex;
         width: 15rem;
-        .cart {
+        justify-content: flex-end;         
+        div {
             a {
                 img {
-                   
-                    &:hover {
-                        @include aumentar (scale(1.1), 00.4s);
-                    }
-                }
-            }
-        }
-        .login {
-            a {
-                img {
-                    
+                                      
                     &:hover {
                         @include aumentar (scale(1.1), 00.4s);
                     }

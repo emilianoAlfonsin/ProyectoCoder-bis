@@ -8,6 +8,11 @@ header {
 header .busqueda {
   width: 15rem;
 }
+@media screen and (max-width: 768px) {
+  header .busqueda {
+    display: none;
+  }
+}
 header .logo-header a img {
   width: 15rem;
   height: auto;
@@ -15,12 +20,9 @@ header .logo-header a img {
 header div {
   display: flex;
   width: 15rem;
+  justify-content: flex-end;
 }
-header div .cart a img:hover {
-  transform: scale(1.1);
-  transition: 0.4s;
-}
-header div .login a img:hover {
+header div div a img:hover {
   transform: scale(1.1);
   transition: 0.4s;
 }
