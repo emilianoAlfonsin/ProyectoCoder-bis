@@ -73,6 +73,66 @@ footer div div a img:hover {
   height: auto;
 }
 
+.how-to-container {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin-bottom: 3rem;
+}
+@media screen and (max-width: 768px) {
+  .how-to-container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .how-to-container {
+    width: 95%;
+  }
+}
+.how-to-container .item-l {
+  align-self: flex-start;
+}
+@media screen and (max-width: 480px) {
+  .how-to-container .item-l {
+    align-self: center;
+  }
+}
+.how-to-container .item-l p {
+  margin: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+.how-to-container .item-w {
+  align-self: flex-end;
+}
+@media screen and (max-width: 480px) {
+  .how-to-container .item-w {
+    align-self: center;
+  }
+}
+.how-to-container .item-w p {
+  margin: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.delivery-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.delivery-zone div {
+  margin: 15px 0px 15px 0px;
+}
+.delivery-zone div img {
+  width: 30rem;
+}
+.delivery-zone ul li {
+  list-style: none;
+  text-align: center;
+}
+
 /* Productos - Sección catálogo*/
 .catalog .catalog-sheet {
   display: grid;
