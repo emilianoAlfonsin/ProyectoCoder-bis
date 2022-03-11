@@ -103,6 +103,7 @@ footer div div a img:hover {
   height: auto;
 }
 
+/*Sección como hago?*/
 .how-to-container {
   display: flex;
   flex-direction: column;
@@ -193,6 +194,7 @@ footer div div a img:hover {
   }
 }
 
+/*Sección contacto*/
 .contacto {
   display: flex;
   flex-direction: column;
