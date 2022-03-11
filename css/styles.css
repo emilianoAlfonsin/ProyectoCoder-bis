@@ -162,4 +162,19 @@ footer div div a img:hover {
   }
 }
 
+.contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contacto ul {
+  align-self: center;
+}
+.contacto ul li {
+  list-style: none;
+  margin-bottom: 15px;
+  font-size: large;
+  text-align: center;
+}
+
 /*# sourceMappingURL=styles.css.map */
