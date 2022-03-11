@@ -88,6 +88,21 @@ footer div div a img:hover {
   height: auto;
 }
 
+/*seccion marcas*/
+.logos {
+  margin-bottom: 10px;
+}
+.logos .brand-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logos .brand-row .brand img {
+  width: 10rem;
+  height: auto;
+}
+
 .how-to-container {
   display: flex;
   flex-direction: column;
@@ -149,6 +164,9 @@ footer div div a img:hover {
 }
 
 /* Productos - Sección catálogo*/
+.catalog {
+  margin-bottom: 20px;
+}
 .catalog .catalog-sheet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

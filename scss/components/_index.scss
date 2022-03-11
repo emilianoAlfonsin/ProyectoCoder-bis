@@ -19,3 +19,23 @@
         }
     }
 }
+
+/*seccion marcas*/
+
+.logos {
+    margin-bottom: 10px;
+    .brand-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        .brand{
+            img {
+                width: 10rem;
+                height: auto;
+            }
+            
+        }
+    }
+}
+
