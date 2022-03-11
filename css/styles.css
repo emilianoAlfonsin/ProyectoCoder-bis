@@ -1,4 +1,17 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/static/Montserrat-Medium.ttf");
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 /*Sección header*/
 header {
   display: flex;
