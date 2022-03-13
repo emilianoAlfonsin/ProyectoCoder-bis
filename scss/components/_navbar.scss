@@ -14,15 +14,18 @@
                 flex-wrap: no-wrap;
                 justify-content: space-around;
 
-                li {
-                    &:hover {
-                        @include aumentar (scale(1.2), 00.4s);
-                    }
-                    @media screen and (max-width: 990px) {
+                li {  
+                    a {
+                        font-weight: 1000;
                         &:hover {
-                            transform: none;
+                            @include aumentar (scale(1.2), 00.4s);
                         }
-                    }
+                        @media screen and (max-width: 980px) {
+                            &:hover {
+                                transform: none;
+                            }
+                        }
+                    }                     
                 }            
             }
         }

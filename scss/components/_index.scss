@@ -18,7 +18,7 @@
                     @include aumentar (scale(1.1), 00.4s);
                     box-shadow: 3px 3px 5px nth($colores, 6);
                 }
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 980px) {
                     width: 10rem;
                     height: autos;
                 }
@@ -35,6 +35,7 @@
 
 .logos {
     margin-bottom: 15px;
+    background-color: #ffff;
     .brand-row {
         display: flex;
         justify-content: space-around;
@@ -48,7 +49,7 @@
                 &:hover {
                     opacity: 1;
                 }
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 980px) {
                     width: 7rem;
                     height: autos;
                 }

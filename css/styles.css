@@ -10,6 +10,15 @@
 }
 body {
   font-family: "Montserrat", sans-serif;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+
+h1 {
+  font-size: x-large;
+}
+
+h2 {
+  font-size: larger;
 }
 
 /*Sección header*/
@@ -33,7 +42,7 @@ header .logo-header a img {
   animation: rubberBand;
   animation-duration: 1s;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
   header .logo-header a img {
     width: 10rem;
     height: autos;
@@ -78,12 +87,15 @@ footer div div a img:hover {
   flex-wrap: no-wrap;
   justify-content: space-around;
 }
-.nav-bar div div ul li:hover {
+.nav-bar div div ul li a {
+  font-weight: 1000;
+}
+.nav-bar div div ul li a:hover {
   transform: scale(1.2);
   transition: 0.4s;
 }
-@media screen and (max-width: 990px) {
-  .nav-bar div div ul li:hover {
+@media screen and (max-width: 980px) {
+  .nav-bar div div ul li a:hover {
     transform: none;
   }
 }
@@ -107,7 +119,7 @@ footer div div a img:hover {
   transition: 0.4s;
   box-shadow: 3px 3px 5px rgba(196, 195, 195, 0.932);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
   .destacados div div img {
     width: 10rem;
     height: autos;
@@ -123,6 +135,7 @@ footer div div a img:hover {
 /*seccion marcas*/
 .logos {
   margin-bottom: 15px;
+  background-color: #ffff;
 }
 .logos .brand-row {
   display: flex;
@@ -138,7 +151,7 @@ footer div div a img:hover {
 .logos .brand-row .brand img:hover {
   opacity: 1;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
   .logos .brand-row .brand img {
     width: 7rem;
     height: autos;
@@ -168,7 +181,7 @@ footer div div a img:hover {
   width: 65%;
   margin-bottom: 3rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
   .how-to-container {
     width: 80%;
   }
@@ -243,7 +256,7 @@ footer div div a img:hover {
 .catalog .catalog-sheet .catalog-item .catalog-card div p {
   text-align: justify;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
   .catalog .catalog-sheet {
     grid-template-columns: repeat(3, 1fr);
   }
