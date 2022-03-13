@@ -14,7 +14,18 @@
             img {
                 width: 15rem;
                 height: auto;
-                
+                &:hover {
+                    @include aumentar (scale(1.1), 00.4s);
+                    box-shadow: 3px 3px 5px nth($colores, 6);
+                }
+                @media screen and (max-width: 768px) {
+                    width: 10rem;
+                    height: autos;
+                }
+                @media screen and (max-width: 480px) {
+                    width: 8rem;
+                    height: autos;    
+                }
             }
         }
     }
@@ -23,7 +34,7 @@
 /*seccion marcas*/
 
 .logos {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     .brand-row {
         display: flex;
         justify-content: space-around;
@@ -33,9 +44,34 @@
             img {
                 width: 10rem;
                 height: auto;
+                opacity: 0.7;
+                &:hover {
+                    opacity: 1;
+                }
+                @media screen and (max-width: 768px) {
+                    width: 7rem;
+                    height: autos;
+                }
+                @media screen and (max-width: 480px) {
+                    width: 5rem;
+                    height: autos;    
+                }
             }
             
         }
     }
 }
 
+.promocionales {
+    margin: 15px;
+    .promocionales-item {
+        box-shadow: 5px 5px 5px gray;
+        div {
+            div{
+                .card-body {
+                    background: linear-gradient(#55dbdc, #ffff);
+                }
+            }
+        }
+    }
+}

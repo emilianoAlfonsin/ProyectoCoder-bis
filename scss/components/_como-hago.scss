@@ -15,6 +15,7 @@
     }
     .item-l {
         align-self: flex-start;
+        animation: bounceInRight 1.2s ease;
         @media screen and (max-width: 480px) {
             align-self: center;
         }
@@ -30,6 +31,7 @@
 
     .item-w {
         align-self: flex-end;
+        animation: bounceInLeft 1.2s ease;
         @media screen and (max-width: 480px) {
             align-self: center;
         }

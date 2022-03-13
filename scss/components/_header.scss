@@ -17,8 +17,19 @@ header {
         
         a {
             img {
+                margin: 1rem;
                 width: 15rem;
-                height: auto;                
+                height: auto;
+                animation: rubberBand;
+                animation-duration: 1s;
+                @media screen and (max-width: 768px) {
+                    width: 10rem;
+                    height: autos;
+                }
+                @media screen and (max-width: 480px) {
+                    width: 8rem;
+                    height: autos;    
+                }                
             }
         }
 

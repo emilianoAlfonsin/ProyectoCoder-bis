@@ -27,8 +27,23 @@ header .busqueda {
   }
 }
 header .logo-header a img {
+  margin: 1rem;
   width: 15rem;
   height: auto;
+  animation: rubberBand;
+  animation-duration: 1s;
+}
+@media screen and (max-width: 768px) {
+  header .logo-header a img {
+    width: 10rem;
+    height: autos;
+  }
+}
+@media screen and (max-width: 480px) {
+  header .logo-header a img {
+    width: 8rem;
+    height: autos;
+  }
 }
 header div {
   display: flex;
@@ -87,10 +102,27 @@ footer div div a img:hover {
   width: 15rem;
   height: auto;
 }
+.destacados div div img:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  box-shadow: 3px 3px 5px rgba(196, 195, 195, 0.932);
+}
+@media screen and (max-width: 768px) {
+  .destacados div div img {
+    width: 10rem;
+    height: autos;
+  }
+}
+@media screen and (max-width: 480px) {
+  .destacados div div img {
+    width: 8rem;
+    height: autos;
+  }
+}
 
 /*seccion marcas*/
 .logos {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .logos .brand-row {
   display: flex;
@@ -101,6 +133,32 @@ footer div div a img:hover {
 .logos .brand-row .brand img {
   width: 10rem;
   height: auto;
+  opacity: 0.7;
+}
+.logos .brand-row .brand img:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .logos .brand-row .brand img {
+    width: 7rem;
+    height: autos;
+  }
+}
+@media screen and (max-width: 480px) {
+  .logos .brand-row .brand img {
+    width: 5rem;
+    height: autos;
+  }
+}
+
+.promocionales {
+  margin: 15px;
+}
+.promocionales .promocionales-item {
+  box-shadow: 5px 5px 5px gray;
+}
+.promocionales .promocionales-item div div .card-body {
+  background: linear-gradient(#55dbdc, #ffff);
 }
 
 /*Sección como hago?*/
@@ -122,6 +180,7 @@ footer div div a img:hover {
 }
 .how-to-container .item-l {
   align-self: flex-start;
+  animation: bounceInRight 1.2s ease;
 }
 @media screen and (max-width: 480px) {
   .how-to-container .item-l {
@@ -135,6 +194,7 @@ footer div div a img:hover {
 }
 .how-to-container .item-w {
   align-self: flex-end;
+  animation: bounceInLeft 1.2s ease;
 }
 @media screen and (max-width: 480px) {
   .how-to-container .item-w {
