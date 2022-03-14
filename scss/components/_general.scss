@@ -13,6 +13,10 @@ body{
     background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 
+main {
+    min-height: 65vh;
+}
+
 h1 {
     font-size: x-large;
 }
