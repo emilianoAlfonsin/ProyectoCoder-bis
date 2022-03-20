@@ -35,8 +35,11 @@
         @media screen and (max-width: 980px){
         grid-template-columns: repeat(3, 1fr);
         }
-        @media screen and (max-width: 480px){
-        grid-template-columns: repeat(2, 1fr);
+        @media screen and (max-width: 780px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width: 450px){
+        grid-template-columns: 1fr;
         }
     }
 }

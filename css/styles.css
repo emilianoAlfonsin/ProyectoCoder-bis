@@ -18,11 +18,31 @@ main {
 }
 
 h1 {
+  padding: 35px;
   font-size: x-large;
+  font-style: italic;
+  font-weight: bold;
 }
 
 h2 {
-  font-size: larger;
+  font-size: x-large;
+  padding: 25px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.btn-whatsapp {
+  display: block;
+  width: 70px;
+  height: 70px;
+  color: #fff;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  border-radius: 50%;
+  line-height: 80px;
+  text-align: center;
+  z-index: 999;
 }
 
 /*Sección header*/
@@ -115,8 +135,9 @@ footer div div a img:hover {
   flex-wrap: wrap;
 }
 .destacados div div img {
-  width: 15rem;
+  width: 250px;
   height: auto;
+  margin: 15px;
 }
 .destacados div div img:hover {
   transform: scale(1.1);
@@ -125,14 +146,16 @@ footer div div a img:hover {
 }
 @media screen and (max-width: 980px) {
   .destacados div div img {
-    width: 10rem;
+    width: 180px;
     height: autos;
+    margin: 7px;
   }
 }
 @media screen and (max-width: 480px) {
   .destacados div div img {
-    width: 8rem;
+    width: 120px;
     height: autos;
+    margin: 5px;
   }
 }
 
@@ -169,13 +192,34 @@ footer div div a img:hover {
 }
 
 .promocionales {
-  margin: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
-.promocionales .promocionales-item {
+.promocionales div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 480px) {
+  .promocionales div {
+    flex-direction: column;
+  }
+}
+.promocionales div .promocionales-item {
   box-shadow: 5px 5px 5px gray;
-}
-.promocionales .promocionales-item div div .card-body {
   background: linear-gradient(#55dbdc, #ffff);
+  height: 28rem;
+  animation: bounceIn;
+  animation-duration: 1.2s;
+}
+.promocionales div .promocionales-item img {
+  width: 100%;
+}
+.promocionales div .promocionales-item .card-body {
+  justify-content: flex-start;
+  text-align: justify;
 }
 
 /*Sección como hago?*/
@@ -204,6 +248,9 @@ footer div div a img:hover {
     align-self: center;
   }
 }
+.how-to-container .item-l h5 {
+  margin-top: 15px;
+}
 .how-to-container .item-l p {
   margin: 5px;
   font-weight: bold;
@@ -217,6 +264,9 @@ footer div div a img:hover {
   .how-to-container .item-w {
     align-self: center;
   }
+}
+.how-to-container .item-w h5 {
+  margin-top: 15px;
 }
 .how-to-container .item-w p {
   margin: 5px;
@@ -265,9 +315,14 @@ footer div div a img:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 780px) {
   .catalog .catalog-sheet {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 450px) {
+  .catalog .catalog-sheet {
+    grid-template-columns: 1fr;
   }
 }
 

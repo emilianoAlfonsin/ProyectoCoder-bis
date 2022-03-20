@@ -12,19 +12,22 @@
         div {           
             
             img {
-                width: 15rem;
+                width: 250px;
                 height: auto;
+                margin: 15px;
                 &:hover {
                     @include aumentar (scale(1.1), 00.4s);
                     box-shadow: 3px 3px 5px nth($colores, 6);
                 }
                 @media screen and (max-width: 980px) {
-                    width: 10rem;
+                    width: 180px;
                     height: autos;
+                    margin: 7px;
                 }
                 @media screen and (max-width: 480px) {
-                    width: 8rem;
+                    width: 120px;
                     height: autos;    
+                    margin: 5px;
                 }
             }
         }
@@ -64,15 +67,32 @@
 }
 
 .promocionales {
-    margin: 15px;
-    .promocionales-item {
-        box-shadow: 5px 5px 5px gray;
-        div {
-            div{
-                .card-body {
-                    background: linear-gradient(#55dbdc, #ffff);
-                }
+    margin-top: 40px;
+    margin-bottom: 40px;
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        @media screen and (max-width: 480px) {
+            flex-direction: column;
+        }            
+        .promocionales-item {
+            box-shadow: 5px 5px 5px gray;
+            background: linear-gradient(#55dbdc, #ffff);
+            height: 28rem;
+            animation: bounceIn;
+            animation-duration: 1.2s;
+            img {
+                width: 100%;
             }
+            .card-body {
+                justify-content: flex-start;
+                text-align: justify;
+            }
+           
         }
     }
+    
 }

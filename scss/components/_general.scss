@@ -18,9 +18,29 @@ main {
 }
 
 h1 {
+    padding: 35px;
     font-size: x-large;
+    font-style: italic;
+    font-weight: bold;
 }
 
 h2 {
-    font-size: larger;
+    font-size:x-large;
+    padding: 25px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.btn-whatsapp {
+    display:block;
+    width:70px;
+    height:70px;
+    color: #fff;
+    position: fixed;
+    right:40px;
+    bottom:40px;
+    border-radius:50%;
+    line-height:80px;
+    text-align:center;
+    z-index:999;
 }
