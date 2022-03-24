@@ -41,7 +41,7 @@
     background-color: #ffff;
     .brand-row {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         .brand{
@@ -72,7 +72,7 @@
     div{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: flex-start;
         flex-wrap: wrap;
         @media screen and (max-width: 480px) {

@@ -5,17 +5,23 @@
 footer {
     background: linear-gradient(#55dbdc, #ffff);
     div {
-        display: flex;
-        align-items: center;
+        div {
+            display: flex;
+            align-items: center;
         
-        div{
-            a{
-                img {
-                    &:hover {
-                       @include aumentar (scale(1.1), 00.4s);
+            div {
+                a {
+                    img {
+                        &:hover {
+                        @include aumentar (scale(1.1), 00.4s);
+                        }
                     }
                 }
             }
         }
+    p {
+        font-size: small;
+        text-align: center;
+    }
     }
 }
