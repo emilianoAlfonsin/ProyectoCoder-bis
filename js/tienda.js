@@ -88,11 +88,16 @@ function agregarAlCarrito (id) {
     presentacionCarrito ();
 }
 
+let precio;
+let totalAPagar;
+
 function presentacionCarrito () {
     let carritoHTML = document.getElementById('carrito')
-    html = '';
+    html = ''
 
-    carrito.forEach ((producto, id) => {
+    carrito.forEach ((producto, _id) => {
+        precio = producto.precio*producto.cantidad
+
         html +=
             `<div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
@@ -103,12 +108,29 @@ function presentacionCarrito () {
                         <div class="card-body">
                             <h5 class="card-title">${producto.nombre}</h5>
                             <p class="card-text">Cantidad: ${producto.cantidad}</p>
-                            <p class="card-text">Precio: $${producto.precio*producto.cantidad}</p>
+                            <p class="card-text">Precio: $${precio}</p>
                         </div>
                     </div>
                 </div>
             </div>`
+
+        
     });
 
     carritoHTML.innerHTML = html;
 }
+
+// function total () {
+//     totalAPagar += precio
+// }
+
+// let totalHTML = document.getElementById ('total')
+//     `<div class="card text-center">
+//         <div class="card-header">
+//             Total a pagar
+//         </div>
+//         <div class="card-body">
+//             <p class="card-text">$${totalAPagar}</p>
+//             <a href="#" class="btn btn-primary">Pagar</a>
+//         </div>
+//     </div>`
