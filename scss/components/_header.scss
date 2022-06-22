@@ -40,8 +40,8 @@ header {
         justify-content: flex-end;         
         div {
             a {
-                img {
-                                      
+                text-decoration: none;
+                img { 
                     &:hover {
                         @include aumentar (scale(1.1), 00.4s);
                     }

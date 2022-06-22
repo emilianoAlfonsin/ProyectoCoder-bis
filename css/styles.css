@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +8,6 @@
   font-family: "Montserrat";
   src: url("../fonts/static/Montserrat-Medium.ttf");
 }
-
 body {
   font-family: "Montserrat", sans-serif;
   background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
@@ -53,17 +51,14 @@ header {
   align-items: center;
   justify-content: space-evenly;
 }
-
 header .busqueda {
   width: 15rem;
 }
-
 @media screen and (max-width: 768px) {
   header .busqueda {
     display: none;
   }
 }
-
 header .logo-header a img {
   margin: 1rem;
   width: 15rem;
@@ -71,27 +66,26 @@ header .logo-header a img {
   animation: rubberBand;
   animation-duration: 1s;
 }
-
 @media screen and (max-width: 980px) {
   header .logo-header a img {
     width: 10rem;
     height: autos;
   }
 }
-
 @media screen and (max-width: 480px) {
   header .logo-header a img {
     width: 8rem;
     height: autos;
   }
 }
-
 header div {
   display: flex;
   width: 15rem;
   justify-content: flex-end;
 }
-
+header div div a {
+  text-decoration: none;
+}
 header div div a img:hover {
   transform: scale(1.1);
   transition: 0.4s;
@@ -101,17 +95,14 @@ header div div a img:hover {
 footer {
   background: linear-gradient(#55dbdc, #ffff);
 }
-
 footer div div {
   display: flex;
   align-items: center;
 }
-
 footer div div div a img:hover {
   transform: scale(1.1);
   transition: 0.4s;
 }
-
 footer div p {
   font-size: small;
   text-align: center;
@@ -121,23 +112,19 @@ footer div p {
 .nav-bar {
   background: linear-gradient(#55dbdc, #ffff);
 }
-
 .nav-bar div div ul {
   width: 100%;
   display: flex;
   flex-wrap: no-wrap;
   justify-content: space-around;
 }
-
 .nav-bar div div ul li a {
   font-weight: 1000;
 }
-
 .nav-bar div div ul li a:hover {
   transform: scale(1.2);
   transition: 0.4s;
 }
-
 @media screen and (max-width: 980px) {
   .nav-bar div div ul li a:hover {
     transform: none;
@@ -148,26 +135,22 @@ footer div p {
 .destacados {
   margin-bottom: 2rem;
 }
-
 .destacados div {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
-
 .destacados div div img {
   width: 250px;
   height: auto;
   margin: 15px;
 }
-
 .destacados div div img:hover {
   transform: scale(1.1);
   transition: 0.4s;
   box-shadow: 3px 3px 5px rgba(196, 195, 195, 0.932);
 }
-
 @media screen and (max-width: 980px) {
   .destacados div div img {
     width: 180px;
@@ -175,7 +158,6 @@ footer div p {
     margin: 7px;
   }
 }
-
 @media screen and (max-width: 480px) {
   .destacados div div img {
     width: 120px;
@@ -189,31 +171,26 @@ footer div p {
   margin-bottom: 15px;
   background-color: #ffff;
 }
-
 .logos .brand-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
-
 .logos .brand-row .brand img {
   width: 10rem;
   height: auto;
   opacity: 0.7;
 }
-
 .logos .brand-row .brand img:hover {
   opacity: 1;
 }
-
 @media screen and (max-width: 980px) {
   .logos .brand-row .brand img {
     width: 7rem;
     height: autos;
   }
 }
-
 @media screen and (max-width: 480px) {
   .logos .brand-row .brand img {
     width: 5rem;
@@ -225,7 +202,6 @@ footer div p {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
 .promocionales div {
   display: flex;
   flex-direction: row;
@@ -233,14 +209,12 @@ footer div p {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-
 @media screen and (max-width: 480px) {
   .promocionales div {
     flex-direction: column;
     align-items: center;
   }
 }
-
 .promocionales div .promocionales-item {
   box-shadow: 5px 5px 5px gray;
   background: linear-gradient(#55dbdc, #ffff);
@@ -248,11 +222,9 @@ footer div p {
   animation: bounceIn;
   animation-duration: 1.2s;
 }
-
 .promocionales div .promocionales-item img {
   width: 100%;
 }
-
 .promocionales div .promocionales-item .card-body {
   justify-content: flex-start;
   text-align: justify;
@@ -265,55 +237,45 @@ footer div p {
   width: 65%;
   margin-bottom: 3rem;
 }
-
 @media screen and (max-width: 980px) {
   .how-to-container {
     width: 80%;
   }
 }
-
 @media screen and (max-width: 480px) {
   .how-to-container {
     width: 95%;
   }
 }
-
 .how-to-container .item-l {
   align-self: flex-start;
   animation: bounceInRight 1.2s ease;
 }
-
 @media screen and (max-width: 480px) {
   .how-to-container .item-l {
     align-self: center;
   }
 }
-
 .how-to-container .item-l h5 {
   margin-top: 15px;
 }
-
 .how-to-container .item-l p {
   margin: 5px;
   font-weight: bold;
   font-size: large;
 }
-
 .how-to-container .item-w {
   align-self: flex-end;
   animation: bounceInLeft 1.2s ease;
 }
-
 @media screen and (max-width: 480px) {
   .how-to-container .item-w {
     align-self: center;
   }
 }
-
 .how-to-container .item-w h5 {
   margin-top: 15px;
 }
-
 .how-to-container .item-w p {
   margin: 5px;
   font-weight: bold;
@@ -326,15 +288,12 @@ footer div p {
   align-items: center;
   margin-bottom: 20px;
 }
-
 .delivery-zone div {
   margin: 15px 0px 15px 0px;
 }
-
 .delivery-zone div img {
   width: 30rem;
 }
-
 .delivery-zone ul li {
   list-style: none;
   text-align: center;
@@ -344,38 +303,31 @@ footer div p {
 .catalog {
   margin-bottom: 20px;
 }
-
 .catalog .catalog-sheet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
   grid-auto-rows: 35rem;
 }
-
 .catalog .catalog-sheet .catalog-item:hover {
   box-shadow: 2px 2px 6px gray;
 }
-
 .catalog .catalog-sheet .catalog-item .catalog-card div h5 {
   text-align: center;
 }
-
 .catalog .catalog-sheet .catalog-item .catalog-card div p {
   text-align: justify;
 }
-
 @media screen and (max-width: 980px) {
   .catalog .catalog-sheet {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media screen and (max-width: 780px) {
   .catalog .catalog-sheet {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media screen and (max-width: 450px) {
   .catalog .catalog-sheet {
     grid-template-columns: 1fr;
@@ -388,11 +340,9 @@ footer div p {
   flex-direction: column;
   align-items: flex-start;
 }
-
 .contacto ul {
   align-self: center;
 }
-
 .contacto ul li {
   list-style: none;
   margin-bottom: 15px;
