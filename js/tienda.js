@@ -10,7 +10,7 @@ listaProductos.forEach((prod) => {
     div.classList.add('prod')
     
     div.innerHTML = `
-                    <div class="catalog-item" id="pampersConfort">
+                    <div class="catalog-item">
                         <div class="card h-100 catalog-card">
                             <img src=${prod.img} class="card-img-top" alt="">
                             <div class="card-body">
@@ -30,16 +30,14 @@ listaProductos.forEach((prod) => {
 
 // ----- Carrito de compras -----
 
-const carrito = []
-
+const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 const agregarAlCarrito = (id) => {
     const item = listaProductos.find((prod) => prod.id === id)
     const prodEnCarrito = carrito.includes(item)
     
     prodEnCarrito === false ? (carrito.push(item)) : item.cantidad ++; 
-    console.log(item)
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
-}
 
+}
