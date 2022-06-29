@@ -2,7 +2,7 @@
 <h1 align="center">Hi 👋, I'm Emiliano Alfonsín</h1>
 <h3 align="center">A passionate frontend developer from Argentina</h3>
 
-- 🔭 I’m currently working on **My final project from Web Developer course**
+- 🔭 I’m currently working on **My final project from JavaScript course**
 
 - 🌱 I’m currently learning **HTML, CSS and Javascript in Coderhouse**
 
