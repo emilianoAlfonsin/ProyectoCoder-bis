@@ -19,7 +19,7 @@ listaProductos.forEach((prod) => {
                                 to additional content.</p>
                                 <p>Precio: $${prod.precio}</p>
                                 <div>
-                                <button class="btn btn-primary" onclick="agregarAlCarrito(${prod.id})">Comprar</button>
+                                <button class="btn btn-primary" id="btnComprar" onclick="agregarAlCarrito(${prod.id})">Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -31,10 +31,13 @@ listaProductos.forEach((prod) => {
 // ----- Carrito de compras -----
 
 const carrito = JSON.parse(localStorage.getItem('carrito')) || []
+const btnComprar = document.querySelector("#btnComprar")
 
 const agregarAlCarrito = (id) => {
     const item = listaProductos.find((prod) => prod.id === id)
     const prodEnCarrito = carrito.includes(item)
+    btnComprar.classList.remove('btn-primary')
+    btnComprar.classList.add('btn-success')
     
     prodEnCarrito === false ? (carrito.push(item)) : null; 
 

@@ -85,10 +85,8 @@ const quitarCant = (id) => {
     const item = carritoJSON.find((producto) => producto.id === id)
     item.cantidad --
     
-    if(item.cantidad <= 0){
-        removerDelCarrito()
-    }
-
+    item.cantidad <= 0 &&  removerDelCarrito(item.id)
+    
     localStorage.setItem('carrito', JSON.stringify(carritoJSON))
     renderizarCarrito()
     renderTotal()
