@@ -1,6 +1,5 @@
 
 const carritoContainer = document.querySelector('#carrito')
-// const btnEliminarProd = document.querySelector('#eliminarItem')
 
 const carritoJSON = JSON.parse(localStorage.getItem('carrito'))
 
@@ -23,12 +22,12 @@ const renderizarCarrito = () => {
                                     <img src=${item.img} class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-8">
-                                    <button class="btn btn-ligth justify-self-end" onclick="eliminarItem(${item.id})">X</button>
+                                    <button class="btn btn-ligth text-end" onclick="removerDelCarrito(${item.id})">X</button>
                                     <div class="card-body">
                                         <h6 class="card-title">${item.nombre}</h6>
                                         <p>Cantidad: ${item.cantidad} 
-                                        <button class="btn btn-outline-secondary btn-sm" id="menos">-</button>
-                                        <button class="btn btn-outline-secondary btn-sm" id="más">+</button></p>
+                                        <button class="btn btn-outline-secondary btn-sm" onclick="quitarCant(${item.cantidad})"id="menos">-</button>
+                                        <button class="btn btn-outline-secondary btn-sm" onclick="agregarCant(${item.cantidad}) id="más">+</button></p>
                                         <p class="card-text">Precio: $${precio}</p>
                                     </div>
                                 </div>
@@ -36,11 +35,13 @@ const renderizarCarrito = () => {
                         </div>
                     `
     carritoContainer.append(div)
+    console.log(carritoJSON)
 
     })
 }
 
 renderizarCarrito()
+
 
 const removerDelCarrito = (id) => {
     const item = carritoJSON.find((producto) => producto.id === id)
@@ -50,7 +51,7 @@ const removerDelCarrito = (id) => {
     localStorage.setItem('carrito', JSON.stringify(carritoJSON))
 
     renderizarCarrito()
-
+    renderTotal()
 }
 
 const totalPagar= document.querySelector('#totalPagar')
@@ -58,10 +59,40 @@ const totalPagar= document.querySelector('#totalPagar')
 const renderTotal = () => {
     let total = 0
     carritoJSON.forEach((producto) => {
-        total += precio
+        total += producto.precio*producto.cantidad
     })
 
-    totalPagar.innertext = total
+    totalPagar.innerText = total
 }
 
 renderTotal()
+
+//----- Botones - +  ------
+
+// const sumar = document.querySelector('#mas')
+// const restar = document.querySelector('#menos')
+
+const agregarCant = (id) => {
+    const item = carritoJSON.find((producto) => producto.id === id)
+    item.cantidad ++
+
+    localStorage.setItem('carrito', JSON.stringify(carritoJSON))
+    renderizarCarrito()
+    renderTotal()
+}
+
+const quitarCant = (id) => {
+    const item = carritoJSON.find((producto) => producto.id === id)
+    item.cantidad --
+    
+    if(item.cantidad <= 0){
+        removerDelCarrito()
+    }
+
+    localStorage.setItem('carrito', JSON.stringify(carritoJSON))
+    renderizarCarrito()
+    renderTotal()
+}
+
+// sumar.addEventListener('click', agregarCant)
+// restar.addEventListener('click', quitarCant)

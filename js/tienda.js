@@ -36,7 +36,7 @@ const agregarAlCarrito = (id) => {
     const item = listaProductos.find((prod) => prod.id === id)
     const prodEnCarrito = carrito.includes(item)
     
-    prodEnCarrito === false ? (carrito.push(item)) : item.cantidad ++; 
+    prodEnCarrito === false ? (carrito.push(item)) : null; 
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
