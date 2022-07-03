@@ -1,7 +1,5 @@
-// ----- Selectores -----
 
 const catalogoContainer = document.querySelector('#catalogo')
-
 
 // ----- Catalogo en HTML -----
 
@@ -28,19 +26,16 @@ listaProductos.forEach((prod) => {
     catalogoContainer.append(div)
 })
 
-// ----- Carrito de compras -----
-
 const carrito = JSON.parse(localStorage.getItem('carrito')) || []
-const btnComprar = document.querySelector("#btnComprar")
+const btnComprar = document.querySelectorAll("#btnComprar")
 
 const agregarAlCarrito = (id) => {
     const item = listaProductos.find((prod) => prod.id === id)
     const prodEnCarrito = carrito.includes(item)
-    btnComprar.classList.remove('btn-primary')
-    btnComprar.classList.add('btn-success')
-    
-    prodEnCarrito === false ? (carrito.push(item)) : null; 
+
+    prodEnCarrito === false ? (carrito.push(item)): item.cantidad++; 
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
+    console.log(carrito)
 
 }

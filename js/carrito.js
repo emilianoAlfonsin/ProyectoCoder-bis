@@ -1,9 +1,6 @@
 
 const carritoContainer = document.querySelector('#carrito')
-
 const carritoJSON = JSON.parse(localStorage.getItem('carrito'))
-
-
 
 //----- Carrito -----
 
@@ -22,12 +19,12 @@ const renderizarCarrito = () => {
                                     <img src=${item.img} class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-8">
-                                    <button class="btn btn-ligth text-end" onclick="removerDelCarrito(${item.id})">X</button>
+                                    <button class="btn btn-outline-secondary text-end" onclick="removerDelCarrito(${item.id})">X</button>
                                     <div class="card-body">
                                         <h6 class="card-title">${item.nombre}</h6>
                                         <p>Cantidad: ${item.cantidad} 
-                                        <button class="btn btn-outline-secondary btn-sm" onclick="quitarCant(${item.cantidad})"id="menos">-</button>
-                                        <button class="btn btn-outline-secondary btn-sm" onclick="agregarCant(${item.cantidad}) id="más">+</button></p>
+                                        <button class="btn btn-outline-secondary btn-sm" onclick="quitarCant(${item.id})" id="menos">-</button>
+                                        <button class="btn btn-outline-secondary btn-sm" onclick="agregarCant(${item.id})" id="más">+</button></p>
                                         <p class="card-text">Precio: $${precio}</p>
                                     </div>
                                 </div>
@@ -69,8 +66,6 @@ renderTotal()
 
 //----- Botones - +  ------
 
-// const sumar = document.querySelector('#mas')
-// const restar = document.querySelector('#menos')
 
 const agregarCant = (id) => {
     const item = carritoJSON.find((producto) => producto.id === id)
@@ -91,6 +86,3 @@ const quitarCant = (id) => {
     renderizarCarrito()
     renderTotal()
 }
-
-// sumar.addEventListener('click', agregarCant)
-// restar.addEventListener('click', quitarCant)
