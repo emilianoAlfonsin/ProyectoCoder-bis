@@ -2,29 +2,30 @@
 const carritoContainer = document.querySelector('#carrito')
 const carritoJSON = JSON.parse(localStorage.getItem('carrito'))
 
+
 //----- Carrito -----
 
 const renderizarCarrito = () => {
     carritoContainer.innerHTML = ''
     
-    carritoJSON.forEach((item) => {
+    carritoJSON.forEach((itemEnCarrito) => {
         const div = document.createElement('div')
-        const precio = item.cantidad * item.precio
+        const precio = itemEnCarrito.cantidad * itemEnCarrito.precio
         
         div.innerHTML =`
                         <div class="card mb-3" style="max-width: 720px;">
                             
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src=${item.img} class="img-fluid rounded-start" alt="">
+                                    <img src=${itemEnCarrito.img} class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-8">
-                                    <button class="btn btn-outline-secondary text-end" onclick="removerDelCarrito(${item.id})">X</button>
+                                    <button class="btn btn-outline-secondary text-end" onclick="removerDelCarrito(${itemEnCarrito.id})">X</button>
                                     <div class="card-body">
-                                        <h6 class="card-title">${item.nombre}</h6>
-                                        <p>Cantidad: ${item.cantidad} 
-                                        <button class="btn btn-outline-secondary btn-sm" onclick="quitarCant(${item.id})" id="menos">-</button>
-                                        <button class="btn btn-outline-secondary btn-sm" onclick="agregarCant(${item.id})" id="más">+</button></p>
+                                        <h6 class="card-title">${itemEnCarrito.nombre}</h6>    
+                                        <p>Cantidad: ${itemEnCarrito.cantidad} 
+                                        <button class="btn btn-outline-secondary btn-sm" onclick="quitarCant(${itemEnCarrito.id})" id="menos">-</button>
+                                        <button class="btn btn-outline-secondary btn-sm" onclick="agregarCant(${itemEnCarrito.id})" id="más">+</button></p>
                                         <p class="card-text">Precio: $${precio}</p>
                                     </div>
                                 </div>
@@ -41,14 +42,27 @@ renderizarCarrito()
 
 
 const removerDelCarrito = (id) => {
-    const item = carritoJSON.find((producto) => producto.id === id)
-    const indice = carritoJSON.indexOf(item)
+    const itemEnCarrito = carritoJSON.find((producto) => producto.id === id)
+    const indice = carritoJSON.indexOf(itemEnCarrito)
     carritoJSON.splice(indice, 1)
+
+    mensajeEliminado(itemEnCarrito.nombre)
 
     localStorage.setItem('carrito', JSON.stringify(carritoJSON))
 
     renderizarCarrito()
     renderTotal()
+}
+
+const mensajeEliminado = (nombre) => {
+    Toastify({
+        text: `Se eliminó ${nombre} del carrito!`,
+        duration: 3000,
+        position: 'left',
+        style: {
+            background: "linear-gradient(to right, #f3ab44, #fa5363)",
+        }
+    }).showToast()
 }
 
 const totalPagar= document.querySelector('#totalPagar')
@@ -68,8 +82,8 @@ renderTotal()
 
 
 const agregarCant = (id) => {
-    const item = carritoJSON.find((producto) => producto.id === id)
-    item.cantidad ++
+    const itemEnCarrito = carritoJSON.find((producto) => producto.id === id)
+    itemEnCarrito.cantidad ++
 
     localStorage.setItem('carrito', JSON.stringify(carritoJSON))
     renderizarCarrito()
@@ -77,10 +91,10 @@ const agregarCant = (id) => {
 }
 
 const quitarCant = (id) => {
-    const item = carritoJSON.find((producto) => producto.id === id)
-    item.cantidad --
+    const itemEnCarrito = carritoJSON.find((producto) => producto.id === id)
+    itemEnCarrito.cantidad --
     
-    item.cantidad <= 0 &&  removerDelCarrito(item.id)
+    itemEnCarrito.cantidad <= 0 &&  removerDelCarrito(itemEnCarrito.id)
     
     localStorage.setItem('carrito', JSON.stringify(carritoJSON))
     renderizarCarrito()

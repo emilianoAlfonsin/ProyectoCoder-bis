@@ -29,13 +29,32 @@ listaProductos.forEach((prod) => {
 const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 const btnComprar = document.querySelectorAll("#btnComprar")
 
-const agregarAlCarrito = (id) => {
-    const item = listaProductos.find((prod) => prod.id === id)
-    const prodEnCarrito = carrito.includes(item)
+const agregarAlCarrito = (prodId) => {
+    const {id, nombre, precio, img} = listaProductos.find((prod) => prod.id === prodId)
+    
+    const itemEnCarrito = {
+        id, nombre, precio, img, cantidad:1
+    }
 
-    prodEnCarrito === false ? (carrito.push(item)): item.cantidad++; 
+    const prodEnCarrito = carrito.includes(itemEnCarrito)
+
+    prodEnCarrito === false ? (carrito.push(itemEnCarrito)): itemEnCarrito.cantidad++; 
+
+    mensajeAgregado(itemEnCarrito.nombre)
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
     console.log(carrito)
 
+}
+
+
+const mensajeAgregado = (nombre) => {
+    Toastify({
+        text: `Se agregó 1 unidad de ${nombre} al carrito!`,
+        duration: 3000,
+        position: 'left',
+        style: {
+            background: "linear-gradient(to right, #f3ab44, #fa5363)",
+        }
+    }).showToast()
 }
