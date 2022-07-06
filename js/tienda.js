@@ -27,24 +27,20 @@ listaProductos.forEach((prod) => {
 })
 
 const carrito = JSON.parse(localStorage.getItem('carrito')) || []
-const btnComprar = document.querySelectorAll("#btnComprar")
 
 const agregarAlCarrito = (prodId) => {
-    const {id, nombre, precio, img} = listaProductos.find((prod) => prod.id === prodId)
     
-    const itemEnCarrito = {
+    const {id, nombre, precio, img} = listaProductos.find((prod) => prod.id === prodId)
+
+    const itemEncarrito = {
         id, nombre, precio, img, cantidad:1
     }
 
-    const prodEnCarrito = carrito.includes(itemEnCarrito)
+    const prodEnCarrito = carrito.find((prod) => prod.id === prodId)
 
-    prodEnCarrito === false ? (carrito.push(itemEnCarrito)): itemEnCarrito.cantidad++; 
-
-    mensajeAgregado(itemEnCarrito.nombre)
+    prodEnCarrito ? mensajeYaSeAgrego() : carrito.push(itemEncarrito) && mensajeAgregado(itemEncarrito.nombre); 
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
-    console.log(carrito)
-
 }
 
 
@@ -55,6 +51,17 @@ const mensajeAgregado = (nombre) => {
         position: 'left',
         style: {
             background: "linear-gradient(to right, #f3ab44, #fa5363)",
+        }
+    }).showToast()
+}
+
+const mensajeYaSeAgrego = () => {
+    Toastify({
+        text: `Este producto ya está en el carrito`,
+        duration: 3000,
+        position: 'left',
+        style: {
+            background: "linear-gradient(to right, #fa5363, #f3ab44)",
         }
     }).showToast()
 }

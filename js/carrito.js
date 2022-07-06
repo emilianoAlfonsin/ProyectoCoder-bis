@@ -20,7 +20,7 @@ const renderizarCarrito = () => {
                                     <img src=${itemEnCarrito.img} class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-8">
-                                    <button class="btn btn-outline-secondary text-end" onclick="removerDelCarrito(${itemEnCarrito.id})">X</button>
+                                    <button class="btn btn-outline-secondary text-end" id="eliminarProd" ">X</button>
                                     <div class="card-body">
                                         <h6 class="card-title">${itemEnCarrito.nombre}</h6>    
                                         <p>Cantidad: ${itemEnCarrito.cantidad} 
@@ -41,12 +41,12 @@ const renderizarCarrito = () => {
 renderizarCarrito()
 
 
-const removerDelCarrito = (id) => {
+const removerDelCarrito = (id, nombre) => {
     const itemEnCarrito = carritoJSON.find((producto) => producto.id === id)
     const indice = carritoJSON.indexOf(itemEnCarrito)
     carritoJSON.splice(indice, 1)
 
-    mensajeEliminado(itemEnCarrito.nombre)
+    mensajeEliminado()
 
     localStorage.setItem('carrito', JSON.stringify(carritoJSON))
 
@@ -54,9 +54,34 @@ const removerDelCarrito = (id) => {
     renderTotal()
 }
 
+const btnEliminarProd = document.querySelector('#eliminarProd')// si lo coloco arriba no me detecta el botón porque todavía no se generó
+
+//solo me toma el primer producto agregado al carrito
+btnEliminarProd.addEventListener( 'click', (itemEnCarrito) => {
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "Eliminaras este producto de tu carrito!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Mejor no'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            removerDelCarrito(itemEnCarrito.id)
+            Swal.fire(
+            'Eliminado correctamente',
+            'Deseamos que halles el producto que buscás',
+            'success'
+            )
+        }
+    })
+})
+
 const mensajeEliminado = (nombre) => {
     Toastify({
-        text: `Se eliminó ${nombre} del carrito!`,
+        text: `Eliminaste un producto del carrito`,
         duration: 3000,
         position: 'left',
         style: {
@@ -79,7 +104,6 @@ const renderTotal = () => {
 renderTotal()
 
 //----- Botones - +  ------
-
 
 const agregarCant = (id) => {
     const itemEnCarrito = carritoJSON.find((producto) => producto.id === id)
