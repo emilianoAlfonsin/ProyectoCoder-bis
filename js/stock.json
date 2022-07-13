@@ -1,0 +1,19 @@
+[
+    { "id": 1, "nombre": "Pampers Confort Sec", "img": "../images/productos/higiene/pampersConfort.jpg", "precio": 1350, "categoria": "higiene" },
+    { "id": 2, "nombre": "Pampers Premium Care", "img": "../images/productos/higiene/pamperspremium.jpg", "precio": 1530, "categoria": "higiene" },
+    { "id": 3, "nombre": "Pampers Supersec", "img": "../images/productos/higiene/pampersSupersec.jpg", "precio": 1200, "categoria": "higiene" },
+    { "id": 4, "nombre": "Pampers Splashers", "img": "../images/productos/higiene/pampersSplashers.jpg", "precio": 1320, "categoria": "higiene" },
+    { "id": 5, "nombre": "Huggies Active Sec", "img": "../images/productos/higiene/hugActSec.jpg", "precio": 1380, "categoria": "higiene" },
+    { "id": 6, "nombre": "Huggies Triple Proteccion", "img": "../images/productos/higiene/tripleProteccion.jpg", "precio": 1280, "categoria": "higiene" },
+    { "id": 7, "nombre": "Estrella Baby", "img": "../images/productos/higiene/estrellaBaby.jpg", "precio": 1250, "categoria": "higiene" },
+    { "id": 8, "nombre": "Babysec Premium", "img": "../images/productos/higiene/babysecPrem.jpg", "precio": 1170, "categoria": "higiene" },
+    { "id": 9, "nombre": "Babysec Ultra", "img": "../images/productos/higiene/babysecUltra.jpg", "precio": 1100, "categoria": "higiene" },
+    { "id": 10,"nombre": "Ewe Tea tree", "img": "../images/productos/higiene/eweTeaTreeOilx20ml.jpg", "precio": 650, "categoria": "higiene" },
+    { "id": 11,"nombre": "Mamadera Avent clásica", "img": "../images/productos/alimentacion/aventMamaderaClasica260ml.jpg", "precio": 1890, "categoria": "alimentacion" },
+    { "id": 12,"nombre": "Nuk Magic Cup", "img": "../images/productos/alimentacion/nukVasoMagicCup.jpg", "precio": 2100, "categoria": "alimentacion" },
+    { "id": 13,"nombre": "Bimbi Apilable Mickey", "img": "../images/productos/juguetes/bimbiApilableMickey6pz.JPG", "precio": 2690, "categoria": "juguetes" },
+    { "id": 14,"nombre": "Bimbi Monta Figuras", "img": "../images/productos/juguetes/bimbiMontaFiguras.jpg", "precio": 2350, "categoria": "juguetes" },
+    { "id": 15,"nombre": "Bimbi Ranita", "img": "../images/productos/juguetes/bimbiRanita.jpg", "precio": 1780, "categoria": "juguetes" },
+    { "id": 16,"nombre": "Woody toys Almohada", "img": "../images/productos/juguetes/woodyToysAlmohBebe.jpg", "precio": 1680, "categoria": "juguetes" }
+]
+

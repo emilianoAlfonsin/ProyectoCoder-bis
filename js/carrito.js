@@ -33,15 +33,23 @@ const renderizarCarrito = () => {
                         </div>
                     `
     carritoContainer.append(div)
-    console.log(carritoJSON)
-
     })
 }
 
 renderizarCarrito()
 
+const mensajeEliminado = (nombre) => {
+    Toastify({
+        text: `Eliminaste un producto del carrito`,
+        duration: 3000,
+        position: 'left',
+        style: {
+            background: "linear-gradient(to right, #f3ab44, #fa5363)",
+        }
+    }).showToast()
+}
 
-const removerDelCarrito = (id, nombre) => {
+const removerDelCarrito = (id) => {
     const itemEnCarrito = carritoJSON.find((producto) => producto.id === id)
     const indice = carritoJSON.indexOf(itemEnCarrito)
     carritoJSON.splice(indice, 1)
@@ -54,41 +62,7 @@ const removerDelCarrito = (id, nombre) => {
     renderTotal()
 }
 
-const btnEliminarProd = document.querySelector('#eliminarProd')// si lo coloco arriba no me detecta el botón porque todavía no se generó
 
-//solo me toma el primer producto agregado al carrito
-btnEliminarProd.addEventListener( 'click', (itemEnCarrito) => {
-    Swal.fire({
-        title: 'Estas seguro?',
-        text: "Eliminaras este producto de tu carrito!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, eliminar',
-        cancelButtonText: 'Mejor no'
-        }).then((result) => {
-        if (result.isConfirmed) {
-            removerDelCarrito(itemEnCarrito.id)
-            Swal.fire(
-            'Eliminado correctamente',
-            'Deseamos que halles el producto que buscás',
-            'success'
-            )
-        }
-    })
-})
-
-const mensajeEliminado = (nombre) => {
-    Toastify({
-        text: `Eliminaste un producto del carrito`,
-        duration: 3000,
-        position: 'left',
-        style: {
-            background: "linear-gradient(to right, #f3ab44, #fa5363)",
-        }
-    }).showToast()
-}
 
 const totalPagar= document.querySelector('#totalPagar')
 
@@ -102,6 +76,7 @@ const renderTotal = () => {
 }
 
 renderTotal()
+
 
 //----- Botones - +  ------
 
@@ -124,3 +99,32 @@ const quitarCant = (id) => {
     renderizarCarrito()
     renderTotal()
 }
+
+const btnEliminarProd = document.querySelectorAll('#eliminarProd')
+
+btnEliminarProd.addEventListener( 'click', (itemEnCarrito) => {
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "Eliminaras este producto de tu carrito!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Mejor no'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            removerDelCarrito(itemEnCarrito.id)
+            Swal.fire(
+            'Eliminado correctamente',
+            'Deseamos que halles el producto que buscás',
+            'success'
+            )
+        }
+    })
+})
+
+
+
+
+
