@@ -1,6 +1,7 @@
 
 const carritoContainer = document.querySelector('#carrito')
 const carritoJSON = JSON.parse(localStorage.getItem('carrito'))
+const totalPagar= document.querySelector('#totalPagar')
 
 
 //----- Carrito -----
@@ -20,7 +21,7 @@ const renderizarCarrito = () => {
                                     <img src=${itemEnCarrito.img} class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-8">
-                                    <button class="btn btn-outline-secondary text-end" id="eliminarProd" ">X</button>
+                                    <button class="btn btn-outline-secondary text-end eliminarProd" ">X</button>
                                     <div class="card-body">
                                         <h6 class="card-title">${itemEnCarrito.nombre}</h6>    
                                         <p>Cantidad: ${itemEnCarrito.cantidad} 
@@ -62,10 +63,6 @@ const removerDelCarrito = (id) => {
     renderTotal()
 }
 
-
-
-const totalPagar= document.querySelector('#totalPagar')
-
 const renderTotal = () => {
     let total = 0
     carritoJSON.forEach((producto) => {
@@ -100,30 +97,32 @@ const quitarCant = (id) => {
     renderTotal()
 }
 
-const btnEliminarProd = document.querySelectorAll('#eliminarProd')
+const btnEliminarProd = document.querySelectorAll('.eliminarProd')
 
-btnEliminarProd.addEventListener( 'click', (itemEnCarrito) => {
-    Swal.fire({
-        title: 'Estas seguro?',
-        text: "Eliminaras este producto de tu carrito!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, eliminar',
-        cancelButtonText: 'Mejor no'
-        }).then((result) => {
-        if (result.isConfirmed) {
-            removerDelCarrito(itemEnCarrito.id)
-            Swal.fire(
-            'Eliminado correctamente',
-            'Deseamos que halles el producto que buscás',
-            'success'
-            )
-        }
-    })
-})
-
+for (const btn of btnEliminarProd){
+    btn.addEventListener('click', function (itemEnCarrito) {
+            Swal.fire({
+                title: 'Estas seguro?',
+                text: "Eliminaras este producto de tu carrito!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, eliminar',
+                cancelButtonText: 'Mejor no'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    removerDelCarrito(itemEnCarrito)
+                    renderizarCarrito()
+                    Swal.fire(
+                        'Eliminado correctamente',
+                        'Deseamos que halles el producto que buscás',
+                        'success'
+                    )
+                }
+            })
+        })
+}
 
 
 

@@ -5,7 +5,7 @@ const catalogoContainer = document.querySelector('#catalogo')
 
 let stock = []
 
-fetch('/stock.json')
+fetch('../js/stock.json')
     .then((resp) => resp.json())
     .then((data) => {
         stock = data
