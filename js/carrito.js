@@ -14,19 +14,18 @@ const renderizarCarrito = () => {
         const precio = itemEnCarrito.cantidad * itemEnCarrito.precio
         
         div.innerHTML =`
-                        <div class="card mb-3" style="max-width: 720px;">
-                            
+                        <div class="card mb-3 catalog-item" style="max-width: 720px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src=${itemEnCarrito.img} class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-8">
-                                    <button class="btn btn-outline-secondary text-end eliminarProd" ">X</button>
+                                    <button class="btn btn-outline-secondary d-flex ml-auto" onclick="eliminarProducto(${itemEnCarrito.id})">X</button>
                                     <div class="card-body">
-                                        <h6 class="card-title">${itemEnCarrito.nombre}</h6>    
+                                        <h5 class="card-title">${itemEnCarrito.nombre}</h5>    
                                         <p>Cantidad: ${itemEnCarrito.cantidad} 
-                                        <button class="btn btn-outline-secondary btn-sm" onclick="quitarCant(${itemEnCarrito.id})" id="menos">-</button>
-                                        <button class="btn btn-outline-secondary btn-sm" onclick="agregarCant(${itemEnCarrito.id})" id="más">+</button></p>
+                                        <button class="btn btn-outline-secondary" style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;" onclick="quitarCant(${itemEnCarrito.id})" id="menos">-</button>
+                                        <button class="btn btn-outline-secondary" style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;" onclick="agregarCant(${itemEnCarrito.id})" id="más">+</button></p>
                                         <p class="card-text">Precio: $${precio}</p>
                                     </div>
                                 </div>
@@ -75,7 +74,7 @@ const renderTotal = () => {
 renderTotal()
 
 
-//----- Botones - +  ------
+//----- Botones -/+/X ------
 
 const agregarCant = (id) => {
     const itemEnCarrito = carritoJSON.find((producto) => producto.id === id)
@@ -97,33 +96,57 @@ const quitarCant = (id) => {
     renderTotal()
 }
 
-const btnEliminarProd = document.querySelectorAll('.eliminarProd')
-
-for (const btn of btnEliminarProd){
-    btn.addEventListener('click', function (itemEnCarrito) {
-            Swal.fire({
-                title: 'Estas seguro?',
-                text: "Eliminaras este producto de tu carrito!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, eliminar',
-                cancelButtonText: 'Mejor no'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    removerDelCarrito(itemEnCarrito)
-                    renderizarCarrito()
-                    Swal.fire(
-                        'Eliminado correctamente',
-                        'Deseamos que halles el producto que buscás',
-                        'success'
-                    )
-                }
-            })
-        })
+function eliminarProducto (prodEnCarrito) {
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "Eliminarás este producto de tu carrito!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Mejor no'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            removerDelCarrito(prodEnCarrito)
+            Swal.fire(
+                'Eliminado correctamente',
+                'Deseamos que halles el producto que buscás',
+                'success'
+            )
+        }
+    })
 }
 
+//----- Vaciar carrito -----
 
+const vaciarCarrito = () => {
+    carritoJSON.length = 0
+    localStorage.setItem('carrito', JSON.stringify(carritoJSON))
+    renderizarCarrito()
+    renderTotal()
+}
+
+const btnVaciar = document.querySelector('#btnVaciarCarrito')
+
+btnVaciar.addEventListener ('click', () => {
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "Eliminarás todos los productos de tu carrito!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, vaciar',
+        cancelButtonText: 'Mejor no'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            vaciarCarrito()
+            Swal.fire(
+                'Vaciaste tu carrito'
+            )
+        }
+    })
+})
 
 
