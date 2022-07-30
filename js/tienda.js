@@ -39,12 +39,6 @@ const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 const agregarAlCarrito = (prodId) => {
     
-    // const itemEncarrito = carrito.find((prod) => prod.id === prodId)
-
-    // const itemEncarrito = {
-    //     id, nombre, precio, img, cantidad:1
-    // }
-
     const prodEnCarrito = carrito.find((prod) => prod.id === prodId)
 
     // prodEnCarrito ? mensajeYaSeAgrego() : carrito.push(prodEncarrito) && mensajeAgregado(prodEncarrito.nombre); 

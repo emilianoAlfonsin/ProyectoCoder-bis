@@ -105,38 +105,61 @@
                     <div class="col-md-6 col-sm-12">
                         <label for="name" class="form-label">Nombre</label>
                         <input type="text" class="form-control" placeholder="" aria-label="First name" name="nombre"
-                            id="nombre">
+                            id="nombre" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa un nombre.
+                        </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="last-name" class="form-label">Apellido</label>
                         <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name"
-                            name="apellido" id="apellido">
+                            name="apellido" id="apellido" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa un apellido.
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="adress" class="form-label">Dirección</label>
-                    <input type="adress" class="form-control" id="direccion" name="direccion" aria-describedby="adress">
+                    <input type="adress" class="form-control" id="direccion" name="direccion" aria-describedby="adress"
+                        required>
+                    <div class="invalid-feedback">
+                        Por favor ingresa una dirección.
+                    </div>
                 </div>
                 <div class="row g-3 mb-3">
                     <div class="col-md-6 col-sm-12">
                         <label for="city" class="form-label">Ciudad</label>
                         <input type="text" class="form-control" placeholder="" name="ciudad" aria-label="city"
-                            id="ciudad">
+                            id="ciudad" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa una ciudad.
+                        </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="postal" class="form-label">Codigo Postal</label>
                         <input type="text" class="form-control" placeholder="" name="cp" aria-label="Codigo postal"
-                            id="cp">
+                            id="cp" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa un código postal.
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp"
+                        required>
+                    <div class="invalid-feedback">
+                        Por favor ingresa un email.
+                    </div>
                 </div>
                 <div class="row g-3 mb-3">
                     <div class="col">
                         <label for="inputPassword1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword1" name="password1">
+                        <input type="password" class="form-control" id="inputPassword1" name="password1" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa una contraseña.
+                        </div>
                         <div id="inputPassword1" class="form-text">
                             La contraseña debe tener al menos 8 caracteres.
                         </div>
@@ -144,7 +167,7 @@
                     <div class="col">
                         <label for="inputPassword2" class="form-label">Repita su contraseña</label>
                         <input type="password" id="inputPassword2" name="password2" class="form-control"
-                            aria-describedby="passwordHelpBlock">
+                            aria-describedby="passwordHelpBlock" required>
                     </div>
                 </div>
 
