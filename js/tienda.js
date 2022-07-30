@@ -15,7 +15,7 @@ fetch('../js/stock.json')
             div.classList.add('prod')
             
             div.innerHTML = `
-                            <div class="catalog-item">
+                            <div class="catalog-item id="${prod.nombre}">
                                 <div class="card h-100 catalog-card">
                                     <img src=${prod.img} class="card-img-top" alt="">
                                     <div class="card-body">

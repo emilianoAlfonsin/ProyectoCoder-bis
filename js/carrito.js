@@ -14,13 +14,13 @@ const renderizarCarrito = () => {
         const precio = itemEnCarrito.cantidad * itemEnCarrito.precio
         
         div.innerHTML =`
-                        <div class="card mb-3 catalog-item" style="max-width: 720px;">
+                        <div class="card mb-3" style="max-width: 720px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src=${itemEnCarrito.img} class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-8">
-                                    <button class="btn btn-outline-secondary d-flex ml-auto" onclick="eliminarProducto(${itemEnCarrito.id})">X</button>
+                                    <button class="btn btn-outline-secondary text-end" onclick="eliminarProducto(${itemEnCarrito.id})">X</button>
                                     <div class="card-body">
                                         <h5 class="card-title">${itemEnCarrito.nombre}</h5>    
                                         <p>Cantidad: ${itemEnCarrito.cantidad} 

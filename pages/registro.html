@@ -100,58 +100,59 @@
         <h1 class="text-center m-3">Registrate</h1>
 
         <section class="container">
-            <form class="register-form mb-3">
+            <form class="register-form mb-3" id="new-user-form">
                 <div class="row g-3 mb-3">
                     <div class="col-md-6 col-sm-12">
                         <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" id="name">
+                        <input type="text" class="form-control" placeholder="" aria-label="First name" name="nombre"
+                            id="nombre">
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="last-name" class="form-label">Apellido</label>
                         <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name"
-                            id="last-name">
+                            name="apellido" id="apellido">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="adress" class="form-label">Dirección</label>
-                    <input type="adress" class="form-control" id="adress" aria-describedby="adress">
+                    <input type="adress" class="form-control" id="direccion" name="direccion" aria-describedby="adress">
                 </div>
                 <div class="row g-3 mb-3">
                     <div class="col-md-6 col-sm-12">
                         <label for="city" class="form-label">Ciudad</label>
-                        <input type="text" class="form-control" placeholder="Ciudad" aria-label="Ciudad" id="city">
+                        <input type="text" class="form-control" placeholder="" name="ciudad" aria-label="city"
+                            id="ciudad">
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <label for="postal" class="form-label">Codigo Postal</label>
-                        <input type="text" class="form-control" placeholder="Codigo postal" aria-label="Codigo postal"
-                            id="postal">
+                        <input type="text" class="form-control" placeholder="" name="cp" aria-label="Codigo postal"
+                            id="cp">
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputEmail1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp">
                 </div>
                 <div class="row g-3 mb-3">
                     <div class="col">
                         <label for="inputPassword1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword1">
+                        <input type="password" class="form-control" id="inputPassword1" name="password1">
                         <div id="inputPassword1" class="form-text">
-                            La contraseña debe tener al menos 8 caracteres, una mayúscula y un número, sin caracteres
-                            especiales.
+                            La contraseña debe tener al menos 8 caracteres.
                         </div>
                     </div>
                     <div class="col">
                         <label for="inputPassword2" class="form-label">Repita su contraseña</label>
-                        <input type="password" id="inputPassword2" class="form-control"
+                        <input type="password" id="inputPassword2" name="password2" class="form-control"
                             aria-describedby="passwordHelpBlock">
                     </div>
                 </div>
 
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="permanecer-regitrado">
+                    <input type="checkbox" class="form-check-input" name="check-permanecer" id="permanecer-regitrado">
                     <label class="form-check-label" for="exampleCheck1">Permanecer registrado</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Registrarme</button>
+                <button type="submit" class="btn btn-primary" id="btn-registro">Registrarme</button>
             </form>
         </section>
 
@@ -209,6 +210,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
         crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/registro.js"></script>
 </body>
 
 </html>

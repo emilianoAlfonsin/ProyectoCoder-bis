@@ -49,8 +49,9 @@
     <header class="main-header container-fluid">
         <div class="busqueda">
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Qué buscás?" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                <input class="form-control me-2" type="search" placeholder="Qué buscás?" aria-label="Search"
+                    id="formBusqueda">
+                <button class="btn btn-outline-success" type="submit" id="btnBuscar">Buscar</button>
             </form>
         </div>
         <div class="logo-header">
@@ -105,10 +106,10 @@
 
         <h1 class="text-center m-3">Mi Carrito</h1>
 
-        <section class="container-fluid row justify-content-center">
+        <section class="container row d-flex g-6">
             <div class="container col-md justify-content-end" id="carrito"></div>
-            <div class="container col-md justify-content-start sticky-top" id="total">
-                <div class="card-body">
+            <div class="container col-md justify-content-center" id="total">
+                <div class="card-body p-2">
                     <h5 class="card-title">Total a pagar</h5>
                     <p class="card-text">$
                         <span id="totalPagar"></span>
@@ -116,7 +117,7 @@
                     <a href="" class="btn btn-primary">Pagar</a>
                 </div>
                 <div>
-                    <button class="btn btn-danger" id="btnVaciarCarrito">Vaciar Carrito</button>
+                    <button class="btn btn-danger p-2" id="btnVaciarCarrito">Vaciar Carrito</button>
                 </div>
             </div>
         </section>
