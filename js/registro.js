@@ -1,6 +1,7 @@
-const formImputList = document.querySelectorAll('.form-control')
 
 const newUserForm = document.getElementById('new-user-form')
+const userList = JSON.parse(localStorage.getItem('userList')) || []
+
 newUserForm.addEventListener('submit', (e) =>{
     e.preventDefault()
     let userFormData = new FormData (newUserForm)
@@ -9,6 +10,7 @@ newUserForm.addEventListener('submit', (e) =>{
     Swal.fire('Listo!','Te regisraste con éxito','success')
 })
 
+//----- transforma el Formdata en un objeto 
 const convertformDataToObj = (userFormData) => {
     let nombre = userFormData.get("nombre")
     let apellido = userFormData.get("apellido")
@@ -29,8 +31,26 @@ const convertformDataToObj = (userFormData) => {
     }
 }
 
-const saveUser = (user) => {
-    let userJSON = JSON.stringify(user)
-    localStorage.setItem('userList', userJSON)
+// const saveUser = (user) => {
+//     let userJSON = JSON.stringify(user)
+//     localStorage.setItem('userList', userJSON)
+// }
+const saveUser = (userId) => {
+    
+    const usuarioRegistrado = userList.find((user) => user.email === userId)
+
+    if (usuarioRegistrado){
+        mensajeErrorRegistro()
+    }else{
+        
+        const newUser = userId
+
+        userList.push(newUser)
+    }
+
+    localStorage.setItem('userList', JSON.stringify(userList))
 }
 
+const mensajeErrorRegistro = () => {
+    Swal.fire ("Intentalo nuevamente", "Este email ya se encuentra registrado", "error")
+}
