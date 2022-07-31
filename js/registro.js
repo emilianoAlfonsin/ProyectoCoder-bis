@@ -1,17 +1,18 @@
-
-const newUserForm = document.getElementById('new-user-form')
-const userList = JSON.parse(localStorage.getItem('userList')) || []
+const newUserForm = document.querySelector('#new-user-form')
 
 newUserForm.addEventListener('submit', (e) =>{
     e.preventDefault()
-    let userFormData = new FormData (newUserForm)
-    let userObj = convertformDataToObj(userFormData)
-    saveUser(userObj)
+    //Obtiene los datos del formulario en pares clave-valor
+    const userFormData = new FormData (newUserForm)
+    //Convierto los datos del FormData y los paso a un objeto que pueda manipular
+    const newUser = convertFormDataToObj(userFormData)
+    //Agrego el objeto obtenido al array de usuarios
+    saveUser(newUser)
     Swal.fire('Listo!','Te regisraste con éxito','success')
 })
 
 //----- transforma el Formdata en un objeto 
-const convertformDataToObj = (userFormData) => {
+const convertFormDataToObj = (userFormData) => {
     let nombre = userFormData.get("nombre")
     let apellido = userFormData.get("apellido")
     let direccion = userFormData.get("direccion")
@@ -31,26 +32,15 @@ const convertformDataToObj = (userFormData) => {
     }
 }
 
-// const saveUser = (user) => {
-//     let userJSON = JSON.stringify(user)
-//     localStorage.setItem('userList', userJSON)
-// }
-const saveUser = (userId) => {
+
+const userList = JSON.parse(localStorage.getItem('userList')) || []
+
+const saveUser = (user) => {
     
-    const usuarioRegistrado = userList.find((user) => user.email === userId)
-
-    if (usuarioRegistrado){
-        mensajeErrorRegistro()
-    }else{
-        
-        const newUser = userId
-
-        userList.push(newUser)
-    }
-
+    userList.push(user)
     localStorage.setItem('userList', JSON.stringify(userList))
 }
 
-const mensajeErrorRegistro = () => {
-    Swal.fire ("Intentalo nuevamente", "Este email ya se encuentra registrado", "error")
-}
+// const mensajeErrorRegistro = () => {
+//     Swal.fire ("Intentalo nuevamente", "Este email ya se encuentra registrado", "error")
+// }
