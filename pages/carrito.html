@@ -112,15 +112,56 @@
                 <div class="card-body p-2">
                     <h5 class="card-title">Total a pagar</h5>
                     <p class="card-text">$
-                        <span id="totalPagar"></span>
+                        <span id="total-a-pagar"></span>
                     </p>
-                    <a href="" class="btn btn-primary">Pagar</a>
+                    <button href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDePago"
+                        id="btn-pagar">Pagar</button>
                 </div>
                 <div>
-                    <button class="btn btn-danger p-2" id="btnVaciarCarrito">Vaciar Carrito</button>
+                    <button class="btn btn-danger p-2" id="btn-vaciar-carrito">Vaciar Carrito</button>
                 </div>
             </div>
         </section>
+
+        <div class="modal fade" id="modalDePago" tabindex="-1" aria-labelledby="modalDePagoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDePagoLabel">Realizá tu pago</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="fst-italic fw-semibold" id="total-modal-de-pago"></h6>
+                        <form>
+                            <div class="form-floating mb-2">
+                                <input type="text" class="form-control" id="imput-card-name" placeholder="">
+                                <label for="imput-card-name">Nombre que figura en la tarjeta</label>
+                            </div>
+                            <div class="row g-2">
+                                <div class="form-floating mb-3 col-md">
+                                    <input type="text" class="form-control" id="imput-card-number" placeholder="">
+                                    <label for="imput-card-number">Número de tarjeta</label>
+                                </div>
+                                <div class="form-floating col-md">
+                                    <select class="form-select" id="cant-cuotas"
+                                        aria-label="Selecciona la cantidad de cuotas">
+                                        <option selected>1</option>
+                                        <option value="1">3</option>
+                                        <option value="2">6</option>
+                                        <option value="3">12</option>
+                                    </select>
+                                    <label for="cant-cuotas">Elegí tus cuotas</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Pagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
 

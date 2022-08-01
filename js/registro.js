@@ -1,3 +1,5 @@
+//-----Seccion para registrar usuarios (en proceso)
+
 const newUserForm = document.querySelector('#new-user-form')
 
 newUserForm.addEventListener('submit', (e) =>{
@@ -11,7 +13,7 @@ newUserForm.addEventListener('submit', (e) =>{
     Swal.fire('Listo!','Te regisraste con éxito','success')
 })
 
-//----- transforma el Formdata en un objeto 
+//----- transforma el Formdata en un objeto ------
 const convertFormDataToObj = (userFormData) => {
     let nombre = userFormData.get("nombre")
     let apellido = userFormData.get("apellido")
@@ -36,7 +38,7 @@ const convertFormDataToObj = (userFormData) => {
 const userList = JSON.parse(localStorage.getItem('userList')) || []
 
 const saveUser = (user) => {
-    
+    // aquí debería constatar que el usuario no esté registrado aún
     userList.push(user)
     localStorage.setItem('userList', JSON.stringify(userList))
 }

@@ -1,9 +1,13 @@
 
 const carritoContainer = document.querySelector('#carrito')
 const carritoJSON = JSON.parse(localStorage.getItem('carrito'))
-const totalPagar= document.querySelector('#totalPagar')
-
-
+const totalPagar= document.querySelector('#total-a-pagar')
+const btnPagar = document.querySelector('#btn-pagar')
+const btnVaciar = document.querySelector('#btn-vaciar-carrito')
+const totalModal = document.querySelector('#total-modal-de-pago')
+let total
+const cuotas = document.querySelector('#cant-cuotas')
+// console.log(cuotas)
 //----- Carrito -----
 
 const renderizarCarrito = () => {
@@ -20,12 +24,14 @@ const renderizarCarrito = () => {
                                     <img src=${itemEnCarrito.img} class="img-fluid rounded-start" alt="">
                                 </div>
                                 <div class="col-md-8">
-                                    <button class="btn btn-outline-secondary text-end" onclick="eliminarProducto(${itemEnCarrito.id})">X</button>
-                                    <div class="card-body">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button class="btn btn-outline" onclick="eliminarProducto(${itemEnCarrito.id})">X</button>
+                                    </div>
+                                    <div class="card-body m-3">
                                         <h5 class="card-title">${itemEnCarrito.nombre}</h5>    
                                         <p>Cantidad: ${itemEnCarrito.cantidad} 
-                                        <button class="btn btn-outline-secondary" style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;" onclick="quitarCant(${itemEnCarrito.id})" id="menos">-</button>
-                                        <button class="btn btn-outline-secondary" style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;" onclick="agregarCant(${itemEnCarrito.id})" id="más">+</button></p>
+                                        <button class="btn btn-outline" style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;" onclick="quitarCant(${itemEnCarrito.id})" id="menos">-</button>
+                                        <button class="btn btn-outline" style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .85rem;" onclick="agregarCant(${itemEnCarrito.id})" id="más">+</button></p>
                                         <p class="card-text">Precio: $${precio}</p>
                                     </div>
                                 </div>
@@ -38,7 +44,20 @@ const renderizarCarrito = () => {
 
 renderizarCarrito()
 
-const mensajeEliminado = (nombre) => {
+//----- Renderizar el total a pagar -----
+
+const renderTotal = () => {
+    total = 0
+    carritoJSON.forEach((producto) => {
+        total += producto.precio*producto.cantidad
+    })
+
+    totalPagar.innerText = total
+}
+
+//----- Remover productos del carrito -----
+
+const mensajeEliminado = () => {
     Toastify({
         text: `Eliminaste un producto del carrito`,
         duration: 3000,
@@ -62,19 +81,10 @@ const removerDelCarrito = (id) => {
     renderTotal()
 }
 
-const renderTotal = () => {
-    let total = 0
-    carritoJSON.forEach((producto) => {
-        total += producto.precio*producto.cantidad
-    })
-
-    totalPagar.innerText = total
-}
-
 renderTotal()
 
 
-//----- Botones -/+/X ------
+//----- Botones -/+ y eliminar producto ------
 
 const agregarCant = (id) => {
     const itemEnCarrito = carritoJSON.find((producto) => producto.id === id)
@@ -118,6 +128,39 @@ function eliminarProducto (prodEnCarrito) {
     })
 }
 
+//----- Modal de pago -----
+
+const calcInteres = () => {
+    if(document.getElementById('cant-cuotas').value ===1){
+        
+        totalModal.innerText.append = `
+            ${total}
+            `
+    }else 
+    if(document.getElementById('cant-cuotas').value === 3) {
+        totalModal.innerText.append = `
+            ${total*=1.1}
+            `
+    }else if(document.getElementById('cant-cuotas').value === 6) {
+        totalModal.innerText.append = `
+            ${total*=1.15}
+            `
+    }else if(document.getElementById('cant-cuotas').value === 12){
+        totalModal.innerText.append = `
+            ${total*=1.25}
+            `
+    }
+
+    console.log(total)
+}
+
+totalModal.innerText = `
+    Total a pagar: $
+    `
+
+cuotas.addEventListener('change', calcInteres)
+
+
 //----- Vaciar carrito -----
 
 const vaciarCarrito = () => {
@@ -127,7 +170,6 @@ const vaciarCarrito = () => {
     renderTotal()
 }
 
-const btnVaciar = document.querySelector('#btnVaciarCarrito')
 
 btnVaciar.addEventListener ('click', () => {
     Swal.fire({
